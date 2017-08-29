@@ -183,7 +183,27 @@ True
 
 
 
+###  `__dict__`
+
+```python
+>>> p.__dict__
+{'name': 'Bob'}
+>>> Person.__dict__
+mappingproxy({'__dict__': <attribute '__dict__' of 'Person' objects>, '__init__': <function Person.__init__ at 0x02E39FA8>, '__weakref__': <attribute '__weakref__' of 'Person' objects>, '__call__': <function Person.__call__ at 0x031EC030>, '__module__': '__main__', '__doc__': None})
+```
+
+实例，类型等对象的所有属性，都放置在其 `__dict__` 字典中。
+
+
+
+
+
 ### 最后
+
+`__del__(self)` 用于在 GC 之前，python回调用这个方法来完成一些终止工作。
 
 这样的定制方法还有很多，需要时可以查阅 [python官方文档](https://docs.python.org/3/reference/datamodel.html#special-method-names) 。
 
+还有用于比较的方法，如 `__lt__() 表示小于` , `__le__() 表示小于等于`， `__gt__() 表示大于` ，`__ge__() 表示大于等于`，`__eq__()表示等于`，`__ne__() 表示不等于`
+
+`__hash__()` 用于哈希，返回一个32位长的整数。
